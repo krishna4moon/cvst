@@ -7,23 +7,25 @@ API_HASH = os.environ.get("API_HASH", "")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
 CREDIT = os.environ.get("CREDIT", "𝐈𝐓'𝐬𝐆𝐎𝐋𝐔")
+
 # MongoDB Configuration
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "CpprivateApi")
-DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://itsgoluAPI:jrMHSipToKUEnmcp@cpprivateapi.ghhp3oz.mongodb.net/?appName=CpprivateApi")  # Add your own atlas db
-MONGO_URL = DATABASE_URL  # For auth system
+DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://itsgoluAPI:jrMHSipToKUEnmcp@cpprivateapi.ghhp3oz.mongodb.net/?appName=CpprivateApi")
+MONGO_URL = DATABASE_URL
 
 # Owner and Admin Configuration
 OWNER_ID = int(os.environ.get("OWNER_ID", ""))
-ADMINS = [int(x) for x in os.environ.get("ADMINS", "").split()]  # Default to owner ID
+ADMINS = [int(x) for x in os.environ.get("ADMINS", "").split()]
 
 # Channel Configuration
 PREMIUM_CHANNEL = ""
+
 # Thumbnail Configuration
-THUMBNAILS = list(map(str, os.environ.get("THUMBNAILS", "").split())) # Image Link For Default Thumbnail 
+THUMBNAILS = list(map(str, os.environ.get("THUMBNAILS", "").split()))
 
 # Web Server Configuration
 WEB_SERVER = os.environ.get("WEB_SERVER", "False").lower() == "true"
-WEBHOOK = True  # Don't change this
+WEBHOOK = True
 PORT = int(os.environ.get("PORT", 8000))
 
 # Message Formats
@@ -60,15 +62,37 @@ Please contact the admin to get access.</blockquote>""",
 <blockquote>Use format: {format}</blockquote>"""
 }
 
+# ============= NEW ADDITIONS - PRESERVING ALL ABOVE =============
+# Premium Plans Configuration
+PLAN_PRICES = {
+    "7": 400,
+    "15": 600,
+    "30": 1000
+}
 
+# Font Styles Configuration
+FONT_STYLES = {
+    "default": "Default",
+    "bold": "Bold",
+    "italic": "Italic",
+    "monospace": "Monospace"
+}
 
+# Font Colors Configuration
+FONT_COLORS = {
+    "white": "#FFFFFF",
+    "blue": "#007bff",
+    "green": "#28a745",
+    "red": "#dc3545",
+    "yellow": "#ffc107",
+    "purple": "#6f42c1"
+}
 
-
-
-
-
-
-
-
-
-
+# Topic/Thread Configuration
+TOPIC_MODES = {
+    "auto": "Auto Create Topic",
+    "manual": "Manual Command (/topic)",
+    "none": "No Topic",
+    "per_batch": "Topic Per Batch",
+    "per_video": "Topic Per Video"
+}
